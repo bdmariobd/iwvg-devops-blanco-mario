@@ -116,29 +116,4 @@ public class UserTest {
         String expectedToString = "User{id='1', name='John', familyName='Doe', fractions=[]}";
         assertEquals(expectedToString, user.toString());
     }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public Fraction getFraction() {
-        return fraction;
-    }
-
-    public void setFraction(Fraction fraction) {
-        this.fraction = fraction;
-    }
-
-    public User getUserWithFraction() {
-        return userWithFraction;
-    }
-
-    public void setUserWithFraction(User userWithFraction) {
-        this.userWithFraction = userWithFraction;
-    }
-
 }
