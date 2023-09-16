@@ -7,6 +7,6 @@
 
 [![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/summary/new_code?id=iwvg-devops-blanco-mario)
 
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=iwvg-devops-blanco-mario&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=bdmariobd_iwvg-devops-blanco-mario)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=iwvg-devops-blanco-mario&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=iwvg-devops-blanco-mario)
 
 
