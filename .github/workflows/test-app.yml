@@ -18,7 +18,7 @@ jobs:
         if: success()
         run: >
           mvn -B verify -DskipTests sonar:sonar
-          -Dsonar.projectKey=es.upm.miw:iwvg-devops-blanco-mario
+          -Dsonar.projectKey=iwvg-devops-blanco-mario
           -Dsonar.organization=bdmariobd
           -Dsonar.host.url=https://sonarcloud.io
           -Dsonar.login=$SONAR_TOKEN
