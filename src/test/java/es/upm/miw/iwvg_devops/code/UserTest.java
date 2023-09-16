@@ -11,12 +11,14 @@ public class UserTest {
 
     private User user;
     private Fraction fraction;
+    private User userWithFraction;
 
     @BeforeEach
     public void setUp() {
         // Create a new User and Fraction instance before each test
         user = new User("1", "John", "Doe");
         fraction = new Fraction(1, 2);
+        userWithFraction = new User("2", "Pepe", "Domingo", List.of(fraction));
     }
 
     @Test
@@ -32,6 +34,12 @@ public class UserTest {
     @Test
     public void testUserWithNoFractions() {
         assertEquals(0, user.getFractions().size());
+    }
+
+    @Test
+    public void testUserWithFractions() {
+        assertEquals(1, userWithFraction.getFractions().size());
+        assertEquals(fraction, userWithFraction.getFractions().get(0));
     }
 
     @Test
