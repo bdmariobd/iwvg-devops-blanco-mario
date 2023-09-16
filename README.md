@@ -5,3 +5,8 @@
 
 [![DevOps](https://github.com/bdmariobd/iwvg-devops-blanco-mario/actions/workflows/test-app.yml/badge.svg)](https://github.com/miw-upm/iwvg-devops/actions/workflows/test-app.yml)
 
+[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/summary/new_code?id=bdmariobd_iwvg-devops-blanco-mario)
+
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=bdmariobd_iwvg-devops-blanco-mario&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=bdmariobd_iwvg-devops-blanco-mario)
+
+
