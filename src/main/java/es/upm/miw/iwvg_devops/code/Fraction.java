@@ -33,6 +33,14 @@ public class Fraction {
         return (double) numerator / denominator;
     }
 
+    public static boolean isProper(Fraction fraction){
+        return (fraction.getNumerator() < fraction.getDenominator()) && (fraction.getDenominator() != 0);
+    }
+
+    public static boolean isImproper(Fraction fraction){
+        return (fraction.getNumerator() >= fraction.getDenominator()) && (fraction.getDenominator() != 0);
+    }
+
     @Override
     public String toString() {
         return "Fraction{" +
