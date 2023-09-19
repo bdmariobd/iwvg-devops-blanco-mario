@@ -41,6 +41,10 @@ public class Fraction {
         return (fraction.getNumerator() >= fraction.getDenominator()) && (fraction.getDenominator() != 0);
     }
 
+    public static boolean isEquivalent(Fraction fraction1, Fraction fraction2){
+        return (fraction1.getNumerator() * fraction2.getDenominator()) == (fraction1.getDenominator() * fraction2.getNumerator());
+    }
+    
     @Override
     public String toString() {
         return "Fraction{" +
