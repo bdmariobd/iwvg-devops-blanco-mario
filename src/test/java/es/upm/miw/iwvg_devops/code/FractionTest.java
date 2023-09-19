@@ -78,5 +78,10 @@ class FractionTest {
     void testDivide() {
         assertEquals(new Fraction(4, 9), Fraction.divide(fraction, fractionNonProper));
     }
+
+    @Test
+    void testDivideByZero() {
+        assertThrows(IllegalArgumentException.class, () -> Fraction.divide(fraction, new Fraction(0, 1)));
+    }
 }
 
