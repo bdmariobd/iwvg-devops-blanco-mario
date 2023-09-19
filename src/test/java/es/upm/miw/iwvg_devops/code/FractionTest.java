@@ -6,11 +6,12 @@ import org.junit.jupiter.api.Test;
 
 class FractionTest {
 
-    private Fraction fraction;
+    private Fraction fraction, fractionNonProper;
 
     @BeforeEach
     void setUp() {
         fraction = new Fraction(2, 3);
+        fractionNonProper = new Fraction(3, 2);
     }
 
     @Test
@@ -44,5 +45,17 @@ class FractionTest {
     void testToString() {
         assertEquals("Fraction{numerator=2, denominator=3}", fraction.toString());
     }
+
+    @Test
+    void testIsProper() {
+        assertTrue(Fraction.isProper(fraction));
+        assertFalse(Fraction.isProper(fractionNonProper));
+    }
+
+    @Test
+    void testIsNotProper() {
+        assertTrue(Fraction.isImproper(fractionNonProper));
+        assertFalse(Fraction.isImproper(fraction));
+    } 
 }
 
