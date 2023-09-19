@@ -5,8 +5,12 @@ public class Fraction {
     private int denominator;
 
     public Fraction(int numerator, int denominator) {
-        this.numerator = numerator;
-        this.denominator = denominator;
+        if (denominator == 0) {
+            throw new IllegalArgumentException("Denominator cannot be zero.");
+        }
+        int gcd = gcd(numerator, denominator);
+        this.numerator = numerator / gcd;
+        this.denominator = denominator / gcd;
     }
 
     public Fraction() {
@@ -64,6 +68,10 @@ public class Fraction {
         int numerator = fraction1.getNumerator() * fraction2.getDenominator();
         int denominator = fraction1.getDenominator() * fraction2.getNumerator();
         return new Fraction(numerator, denominator);
+    }
+
+    private static int gcd(int numerator, int denominator) {
+        return denominator == 0 ? numerator : gcd(denominator, numerator % denominator);
     }
     
     @Override
