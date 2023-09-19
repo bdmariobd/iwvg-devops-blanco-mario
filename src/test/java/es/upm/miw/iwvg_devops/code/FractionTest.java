@@ -91,5 +91,25 @@ class FractionTest {
         assertEquals(new Fraction(1, 2), new Fraction(6, 12));
         assertEquals(new Fraction(1, 2), new Fraction(8, 16));
     }
+
+    @Test
+    void testEquals() {
+        assertEquals(fraction, new Fraction(20, 30));
+        assertNotEquals(fraction, new Fraction(79, 2));
+        assertNotEquals(fraction, new Fraction(2, 9));
+        Boolean a = true;
+        Boolean b = null;
+        assertNotEquals(fraction, a);
+        assertNotEquals(fraction, b);
+        assertEquals(fraction.hashCode(), new Fraction(20, 30).hashCode());
+    }
+
+    @Test
+    void testCreateFractions() {
+        Fraction fraction = new Fraction();
+        assertEquals(1, fraction.getNumerator());
+        assertEquals(1, fraction.getDenominator());
+        assertThrows(IllegalArgumentException.class, () -> new Fraction(1, 0));
+    }
 }
 
