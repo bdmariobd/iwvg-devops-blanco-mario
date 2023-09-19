@@ -38,11 +38,11 @@ public class Fraction {
     }
 
     public static boolean isProper(Fraction fraction){
-        return (fraction.getNumerator() < fraction.getDenominator()) && (fraction.getDenominator() != 0);
+        return (fraction.getNumerator() < fraction.getDenominator());
     }
 
     public static boolean isImproper(Fraction fraction){
-        return (fraction.getNumerator() >= fraction.getDenominator()) && (fraction.getDenominator() != 0);
+        return (fraction.getNumerator() >= fraction.getDenominator());
     }
 
     public static boolean isEquivalent(Fraction fraction1, Fraction fraction2){
