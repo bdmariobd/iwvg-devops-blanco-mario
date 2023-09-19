@@ -56,6 +56,27 @@ class FractionTest {
     void testIsNotProper() {
         assertTrue(Fraction.isImproper(fractionNonProper));
         assertFalse(Fraction.isImproper(fraction));
-    } 
+    }
+
+    @Test
+    void testIsEquivalent() {
+        assertTrue(Fraction.isEquivalent(fraction, new Fraction(4, 6)));
+        assertTrue(Fraction.isEquivalent(fractionNonProper, new Fraction(27, 18)));
+    }
+
+    @Test
+    void testAdd() {
+        assertEquals(new Fraction(13, 6), Fraction.add(fraction, fractionNonProper));
+    }
+
+    @Test
+    void testMultiply() {
+        assertEquals(new Fraction(6, 6), Fraction.multiply(fraction, fractionNonProper));
+    }
+
+    @Test
+    void testDivide() {
+        assertEquals(new Fraction(4, 9), Fraction.divide(fraction, fractionNonProper));
+    }
 }
 
