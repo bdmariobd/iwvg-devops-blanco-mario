@@ -44,6 +44,27 @@ public class Fraction {
     public static boolean isEquivalent(Fraction fraction1, Fraction fraction2){
         return (fraction1.getNumerator() * fraction2.getDenominator()) == (fraction1.getDenominator() * fraction2.getNumerator());
     }
+
+    public static Fraction add(Fraction fraction1, Fraction fraction2) {
+        int numerator = (fraction1.getNumerator() * fraction2.getDenominator()) + (fraction1.getDenominator() * fraction2.getNumerator());
+        int denominator = fraction1.getDenominator() * fraction2.getDenominator();
+        return new Fraction(numerator, denominator);
+    }
+
+    public static Fraction multiply(Fraction fraction1, Fraction fraction2) {
+        int numerator = fraction1.getNumerator() * fraction2.getNumerator();
+        int denominator = fraction1.getDenominator() * fraction2.getDenominator();
+        return new Fraction(numerator, denominator);
+    }
+
+    public static Fraction divide(Fraction fraction1, Fraction fraction2) {
+        if (fraction2.numerator == 0) {
+            throw new IllegalArgumentException("Cannot divide by zero.");
+        }
+        int numerator = fraction1.getNumerator() * fraction2.getDenominator();
+        int denominator = fraction1.getDenominator() * fraction2.getNumerator();
+        return new Fraction(numerator, denominator);
+    }
     
     @Override
     public String toString() {
