@@ -9,5 +9,13 @@ public class DatabaseResolver {
         return usersDatabase.findAll()
                 .filter(user -> user.getFractions().stream().anyMatch(Fraction::isProper))
                 .map(User::initials);
-    }    
+    }
+    
+    public Fraction findFractionMultiplicationByUserFamilyName(String familyName) {
+        return usersDatabase.findAll()
+                .filter(user -> user.getFamilyName().equals(familyName))
+                .flatMap(user -> user.getFractions().stream())
+                .reduce(Fraction::multiply)
+                .orElseThrow();
+    }
 }
