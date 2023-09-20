@@ -18,4 +18,12 @@ public class DatabaseResolver {
                 .reduce(Fraction::multiply)
                 .orElseThrow();
     }
+
+    public Fraction findFractionDivisionByUserId(String id) {
+        return usersDatabase.findAll()
+                .filter(user -> user.getId().equals(id))
+                .flatMap(user -> user.getFractions().stream())
+                .reduce(Fraction::divide)
+                .orElseThrow();
+    }
 }
