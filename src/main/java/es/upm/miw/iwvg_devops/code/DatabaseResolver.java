@@ -26,4 +26,10 @@ public class DatabaseResolver {
                 .reduce(Fraction::divide)
                 .orElseThrow();
     }
+
+    public Stream<String> findUserNameBySomeImproperFraction() {
+        return usersDatabase.findAll()
+                .filter(user -> user.getFractions().stream().anyMatch(Fraction::isImproper))
+                .map(User::getName);
+    }
 }
