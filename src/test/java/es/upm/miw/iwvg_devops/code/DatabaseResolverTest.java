@@ -1,6 +1,7 @@
 package es.upm.miw.iwvg_devops.code;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.List;
 
@@ -34,5 +35,16 @@ public class DatabaseResolverTest {
 
         Fraction fractionFernandez = databaseResolver.findFractionMultiplicationByUserFamilyName("Fernandez");
         assertEquals(new Fraction(0,1), fractionFernandez);
-    }  
+    }
+    
+    @Test
+    void testFindFractionDivisionByUserId() {
+        Fraction fraction1 = databaseResolver.findFractionDivisionByUserId("1");
+        assertEquals(new Fraction(0,1), fraction1);
+
+        Fraction fraction2 = databaseResolver.findFractionDivisionByUserId("2");
+        assertEquals(new Fraction(-15,1), fraction2);
+
+        assertThrows(Exception.class, () -> databaseResolver.findFractionDivisionByUserId("Err"));
+    }
 }
