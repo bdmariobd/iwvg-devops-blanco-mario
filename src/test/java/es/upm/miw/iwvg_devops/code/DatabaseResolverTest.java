@@ -37,6 +37,8 @@ public class DatabaseResolverTest {
 
         Fraction fractionFernandez = databaseResolver.findFractionMultiplicationByUserFamilyName("Fernandez");
         assertEquals(new Fraction(0,1), fractionFernandez);
+
+        assertThrows(Exception.class, () -> databaseResolver.findFractionMultiplicationByUserFamilyName("Err"));
     }
     
     @Test
